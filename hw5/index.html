@@ -1,0 +1,79 @@
+<!--
+ Name: Muhammed Khalid, muhammed_khalid@student.uml.edu
+ Computer Science Department, UMass Lowell
+ Comp.4610, GUI Programming I
+ File: /usr/cs/temp/f2014/mkhalid/public_html/461f2017/hw5/index.html
+ Created: 19-Nov-2017
+ Last updated by MK: 19-Nov-2017, 10:52
+ Sources:
+ https://www.w3schools.com/html/html_tables.asp
+ https://www.w3schools.com/css/css_howto.asp
+ https://www.w3schools.com/css/css_align.asp
+ https://www.w3schools.com/tags/att_input_placeholder.asp
+ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+ https://www.w3schools.com/howto/howto_css_modals.asp
+ https://getbootstrap.com/docs/4.0/content/tables/
+ http://myvedham.blogspot.in/2013/09/jquery-select-by-name-and-id.html
+ https://stackoverflow.com/questions/171027/add-table-row-in-jquery
+ -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/jquery.validate.js"></script>
+    <title> Homework 5 </title>
+  </head>
+  <body class="bg-secondary" onload="hideThings()">
+    <div class="text-center w-50 p-3 mx-auto">
+      <div class="jumbotron bg-light" style="margin:15px;">
+	<h2 class="display-6"> Car Calculator 2.0 </h2>
+	<form id="inputForm" method="get" action="">
+	  <fieldset>
+	    <div class="w-50 p-3 mx-auto">
+	      <p>
+		<label class="lead">Enter Price </label>
+		<input type="number" class="form-control" name="carPrice" placeholder="Price">
+	      </p>
+	    </div>
+	    <div class="w-50 p-3 mx-auto">
+	      <p>
+		<label class="lead">Enter MPG  </label>
+		<input type="number" class="form-control" name="carMPG" placeholder="MPG">
+	      </p>
+	    </div>
+	    <div class="w-50 p-3 mx-auto">
+	      <p>
+		<label class="lead"> Enter Current Gas Price </label>
+		<input type="number" class="form-control" id="currentGasPrice" name="carGasPrice" placeholder="Car Gas Price">
+	      </p>
+	    </div>
+	    <button type="submit" class="btn btn-primary" style="margin-top:15px;" onclick="generateTable()">Submit</button>
+	  </fieldset>
+	</form>
+      </div>
+    </div>
+    <div class="text-center">
+      <table class="table table-bordered bg-light w-75 p-3 mx-auto">
+	<thead>
+	  <tr>
+	    <th scope="col">Car Price</th>
+	    <th scope="col">Current Gas Price</th>
+	    <th scope="col">Miles / Cost Per Gallon</th>
+	    <th scope="col">Cost After 60K Miles</th>
+	  </tr>
+	</thead>
+	<tbody>
+	</tbody>
+      </table>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+/*
+ Name: Muhammed Khalid, muhammed_khalid@student.uml.edu
+ Computer Science Department, UMass Lowell
+ Comp.4610, GUI Programming I
+ File: /usr/cs/temp/f2014/mkhalid/public_html/461f2017/hw5/css/style.css
+ Created: 19-Nov-2017
+ Last updated by MK: 19-Nov-2017, 10:56
+ Sources:
+ https://www.w3schools.com/html/html_tables.asp
+ https://www.w3schools.com/css/css_howto.asp
+ https://www.w3schools.com/css/css_align.asp
+ https://www.w3schools.com/tags/att_input_placeholder.asp
+ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+ https://www.w3schools.com/howto/howto_css_modals.asp
+ https://jqueryvalidation.org
+ */
+
+.background {
+    background-color:black;
+    background: rgba(255, 255, 255, .5);
+}
+
+.error {
+    color: #EF5350;
+}
