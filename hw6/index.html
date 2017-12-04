@@ -1,0 +1,173 @@
+<!--
+ Name: Muhammed Khalid, muhammed_khalid@student.uml.edu
+ Computer Science Department, UMass Lowell
+ Comp.4610, GUI Programming I
+ File: /usr/cs/temp/f2014/mkhalid/public_html/461f2017/hw6/index.html
+ Created: 03-Dec-2017
+ Last updated by MK: 03-Dec-2017, 10:17
+ Sources:
+ https://www.w3schools.com/html/html_tables.asp
+ https://www.w3schools.com/css/css_howto.asp
+ https://www.w3schools.com/css/css_align.asp
+ https://www.w3schools.com/tags/att_input_placeholder.asp
+ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+ https://www.w3schools.com/howto/howto_css_modals.asp
+ https://getbootstrap.com/docs/4.0/content/tables/
+ http://myvedham.blogspot.in/2013/09/jquery-select-by-name-and-id.html
+ https://stackoverflow.com/questions/171027/add-table-row-in-jquery
+  -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homework 6</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function() {
+      $( "#tabs" ).tabs();
+      } );
+    </script>
+  </head>
+  <body onload="hideThings()">
+    <h1 class="text-center p-4"> Playing With Tabs </h2>
+    <div id="tabs" class="w-75 p-3 mx-auto m1">
+      <ul id="tabList" class="mx-auto">
+	  <li>
+	    <button type="button" class="close" aria-label="Close">
+	      <span aria-hidden="true">&times;</span>
+	    </button>
+	    <a href="#tabs-1">Car Picker</a>
+	  </li>
+	  <li>
+	    <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+	    <a href="#tabs-2">Impossible Guessing Game</a>
+	  </li>
+	  <li>
+	    <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+	    <a href="#tabs-3">Facts Generator</a>
+	  </li>
+      </ul>
+
+      <div class="w-75 p-3">
+	<button class="btn btn-danger w-25" id="delete"> Remove All Tabs </button>
+	<button class="btn btn-primary w-25" id="reload"> Reload </button>
+      </div>
+      <div id="tabs-1">
+	<div class="jumbotron">
+	  <form id="inputForm" method="get">
+	    <fieldset>
+	      <div class="w-75 p-3 mx-auto">
+		<p>
+		  <div class="text-center">
+		    <label class="lead"> Car MSRP: </label>
+		  </div>
+		  <input type="text" class="form-control" id="carPriceSlider" name="carPrice" placeholder="Vehicle MSRP">
+		</p>
+		<div id="slider-range"></div>
+	      </div>
+	      <div class="container w-75 p-3">
+		<div class="row">
+		  <div class="col-sm">
+		    <p>
+                      <div class="text-center">
+                        <label class="lead"> Car MPG: </label>
+                        <input type="text" id="carMPGSlider" class="form-control" name="carMPG" placeholder="Car Make">
+                      </div>
+                    </p>
+		    <div id="mpg-range"></div>
+		  </div>
+		  <div class="col-sm">
+		    <p>
+                      <div class="text-center">
+                        <label class="lead"> Car Gas Price: </label>
+                        <input type="text" id="gasPriceSlider" class="form-control" name="gasPrice" placeholder="Car Make">
+                      </div>
+                    </p>
+		    <div id="gasprice-range"></div>
+		  </div>
+		</div>
+	      </div>
+	      <div class="container w-75 p-3">
+		<div class="row">
+		  <div class="col-sm">
+		    <p>
+                      <div class="text-center">
+			<label class="lead"> Car Make: </label>
+			<input type="text" class="form-control" name="carMake" placeholder="Car Make">
+                      </div>
+		    </p>
+		  </div>
+		  <div class="col-sm">
+		    <p>
+		      <div class="text-center">
+			<label class="lead"> Car Model: </label>
+			<input type="text" class="form-control" name="carModel" placeholder="Car Model">
+                      </div>
+		    </p>
+		  </div>
+		  <div class="col-sm">
+		    <p>
+		      <div class="text-center">
+			<label class="lead"> Car Color: </label>
+			<input type="text" class="form-control" name="carColor" placeholder="Car Color">
+		      </div>
+		    </p>
+		    <div class="color-range"></div>
+		  </div>
+		</div>
+	      </div>
+	    </fieldset>
+	    <div class="text-center">
+	      <button class="btn btn-success w-75" onclick="generateTable()"> Submit </button>
+	    </div>
+	  </form>
+	</div>
+	<div class="text-center">
+	  <table class="table table-bordered bg-light p-3 mx-auto">
+	    <thead>
+	      <tr>
+		<th scope="col">MSRP</th>
+		<th scope="col">Car MPG</th>
+		<th scope="col">Gas Price</th>
+		<th scope="col">Make</th>
+		<th scope="col">Model</th>
+		<th scope="col">Color</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	    </tbody>
+	  </table>
+	</div>
+      </div>
+      <div id="tabs-2">
+	<div class="input-group input-group w-25" style="padding-top:10px;">
+	  <span class="input-group-addon" id="sizing-addon1">Enter Guess</span>
+	  <input type="text" class="form-control" id="guess" aria-label="Username" aria-describedby="sizing-addon1">
+	</div>
+	<button id="playGame" class="btn btn-primary" style="margin:5px;"> Guessing Game </button>
+	<div id="displayWord">
+	  
+	</div>
+	<button id="correctGuess" class="btn btn-success"> </button>
+	<button id="badGuess" class="btn btn-danger"> </button>
+      </div>
+
+      <div id="tabs-3">
+	<button id="factButton" class="btn btn-primary mx-auto p-3"> Press for a random fact </button>
+	<div id="chosenFact" class="mx-auto p-3"> </div>
+      </div>
+    </div>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
