@@ -1,7 +1,19 @@
 
 <!--
 
+  // Div scrolling
   Sources: http://plnkr.co/edit/H0Rr0wTYYsTHZLuD3DPN?p=preview
+  // tab interface
+  https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp
+  // tab interface
+  https://getbootstrap.com/docs/4.0/components/navs/#javascript-behavior
+
+  // radio group
+
+  https://mdbootstrap.com/components/bootstrap-radio-button/
+
+  // JQuery
+  http://api.jquery.com/html/
 
 -->
 
@@ -20,8 +32,6 @@
     $(document).ready(function(){
       $('.btn').click(function() {
         var target;
-        console.log("button pressed");
-
         $(".jumbotron").each(function(i, element) {
           target = $(element).offset().top;
           if (target - 10 > $(document).scrollTop()) {
@@ -36,19 +46,191 @@
   </script>
   </head>
   <body>
+    <div class="text-center">
+    <ul class="nav nav-tabs p-3 mx-auto" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"> Major Decider</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#mood" role="tab" aria-controls="profile" aria-selected="false"> Mid-Semester Mood Analyser</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+      </li>
+    </ul>
+  </div>
 
-    <!-- Question 1 -->
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <!-- Question 1 -->
+
+        <div class="jumbotron" style="margin:15px;">
+          <h1 class="text-center"> Major Decider </h1>
+          <div class="card w-75 p-3 mx-auto" style="margin:15px;">
+            <div class="card-body">
+              <h4 class="card-title">What makes you excited and curious</h4>
+              <div class="row p-3">
+                <div class="col-sm">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Working with children
+                  </label>
+                </div>
+              </div>
+              <div class="col-sm">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value="">
+                  Being outdoors
+                </label>
+              </div>
+            </div>
+            <div class="col-sm">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="">
+                Fashion and design
+              </label>
+            </div>
+          </div>
+              </div>
+              <div class="row p-3">
+                <div class="col-sm">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Sports and Entertainment
+                  </label>
+                </div>
+              </div>
+              <div class="col-sm">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value="">
+                  Social Issues
+                </label>
+              </div>
+            </div>
+            <div class="col-sm">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="">
+                Helping Others
+              </label>
+            </div>
+          </div>
+              </div>
+              <div class="row p-3">
+                <div class="col-sm">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" value="">
+                    Technology
+                  </label>
+                </div>
+              </div>
+              <div class="col-sm">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value="">
+                  Solving Complex Problems
+                </label>
+              </div>
+            </div>
+            <div class="col-sm">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="">
+                Art and Music
+              </label>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-success w-25 p-2"> Next </button>
+          </div>
+      </div>
+
+      <!-- Question 2 -->
+
+      <div class="jumbotron" style="margin:15px;">
+        <div class="card w-75 p-3 mx-auto" style="margin:15px;">
+          <div class="card-body">
+            <h4 class="card-title"> People See You As</h4>
+            <div class="row">
+              <div class="col-sm">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" value="">
+                  A risk taker
+                </label>
+              </div>
+            </div>
+            <div class="col-sm">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" value="">
+                A listener
+              </label>
+            </div>
+          </div>
+          <div class="col-sm">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" value="">
+              An innovator
+            </label>
+          </div>
+        </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" value="">
+                  A leader
+                </label>
+              </div>
+            </div>
+            <div class="col-sm">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="radio" value="">
+                A nerd
+              </label>
+            </div>
+          </div>
+          <div class="col-sm">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="radio" value="">
+              reserved; to yourself
+            </label>
+          </div>
+        </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-success w-25 p-2"> Next </button>
+        </div>
+    </div>
+
+    <!-- Question 3 -->
 
     <div class="jumbotron" style="margin:15px;">
       <div class="card w-75 p-3 mx-auto" style="margin:15px;">
         <div class="card-body">
-          <h4 class="card-title">What makes you excited and curious</h4>
-          <div class="row p-3">
+          <h4 class="card-title">Which subjects did you enjoy in High School</h4>
+          <div class="row">
             <div class="col-sm">
             <div class="form-check">
               <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" value="">
-                Working with children
+                Math
               </label>
             </div>
           </div>
@@ -56,7 +238,7 @@
           <div class="form-check">
             <label class="form-check-label">
               <input class="form-check-input" type="checkbox" value="">
-              Being outdoors
+              Biology
             </label>
           </div>
         </div>
@@ -64,17 +246,17 @@
         <div class="form-check">
           <label class="form-check-label">
             <input class="form-check-input" type="checkbox" value="">
-            Fashion and design
+            Chemistry
           </label>
         </div>
       </div>
           </div>
-          <div class="row p-3">
+          <div class="row">
             <div class="col-sm">
             <div class="form-check">
               <label class="form-check-label">
                 <input class="form-check-input" type="checkbox" value="">
-                Sports and Entertainment
+                Physics
               </label>
             </div>
           </div>
@@ -82,7 +264,7 @@
           <div class="form-check">
             <label class="form-check-label">
               <input class="form-check-input" type="checkbox" value="">
-              Social Issues
+              History
             </label>
           </div>
         </div>
@@ -90,33 +272,7 @@
         <div class="form-check">
           <label class="form-check-label">
             <input class="form-check-input" type="checkbox" value="">
-            Helping Others
-          </label>
-        </div>
-      </div>
-          </div>
-          <div class="row p-3">
-            <div class="col-sm">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
-                Technology
-              </label>
-            </div>
-          </div>
-          <div class="col-sm">
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value="">
-              Solving Complex Problems
-            </label>
-          </div>
-        </div>
-        <div class="col-sm">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="">
-            Art and Music
+            Art
           </label>
         </div>
       </div>
@@ -126,165 +282,99 @@
       <div class="text-center">
         <button class="btn btn-success w-25 p-2"> Next </button>
       </div>
-  </div>
+    </div>
 
-  <!-- Question 2 -->
+    <!-- Question 4 -->
+    <div class="jumbotron" style="margin:15px;">
+      <div class="card w-75 p-3 mx-auto" style="margin:15px;">
+        <div class="card-body">
+          <h4 class="card-title">What is your idea of an accomplishment</h4>
+            <!--Radio group-->
+            <div class="form-group ">
+              <input name="group100" type="radio" id="radio100">
+              <label for="radio100">Making money</label>
+            </div>
 
-  <div class="jumbotron" style="margin:15px;">
-    <div class="card w-75 p-3 mx-auto" style="margin:15px;">
-      <div class="card-body">
-        <h4 class="card-title">Question 1</h4>
-        <h5 class="card-text">What makes you excited and curious</h5>
-        <div class="row">
-          <div class="col-sm">
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value="">
-              Working with children
-            </label>
+            <div class="form-group">
+              <input name="group100" type="radio" id="radio101" checked>
+              <label for="radio101">Solving complex problems</label>
+            </div>
+
+            <div class="form-group">
+              <input name="group100" type="radio" id="radio102">
+              <label for="radio102"> Helping others</label>
+            </div>
+
+            <div class="form-group">
+              <input name="group100" type="radio" id="radio102">
+              <label for="radio102"> Creating something new</label>
+            </div>
+            <!--Radio group-->
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-success w-25 p-2"> Next </button>
+      </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="jumbotron" style="margin:15px;">
+      <div class="card w-75 p-3 mx-auto" style="margin:15px;">
+        <div class="card-body">
+          <h4 class="card-title">What types of TV Shows do you enjoy</h4>
+          <!--Radio group-->
+          <div class="form-group ">
+            <input name="group100" type="radio" id="radio100">
+            <label for="radio100">Documentaries/ Docudramas</label>
           </div>
-        </div>
-        <div class="col-sm">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="">
-            Being outdoors
-          </label>
-        </div>
-      </div>
-      <div class="col-sm">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" value="">
-          Fashion and design
-        </label>
-      </div>
-    </div>
-        </div>
-      </div>
-    </div>
-    <div class="text-center">
-      <button class="btn btn-success w-25 p-2"> Next </button>
-    </div>
-</div>
 
-<!-- Question 3 -->
+          <div class="form-group">
+            <input name="group100" type="radio" id="radio101" checked>
+            <label for="radio101">Soap Operas</label>
+          </div>
 
-<div class="jumbotron" style="margin:15px;">
-  <div class="card w-75 p-3 mx-auto" style="margin:15px;">
-    <div class="card-body">
-      <h4 class="card-title">Question 1</h4>
-      <h5 class="card-text">What makes you excited and curious</h5>
-      <div class="row">
-        <div class="col-sm">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="">
-            Working with children
-          </label>
+          <div class="form-group">
+            <input name="group100" type="radio" id="radio102">
+            <label for="radio102"> Sitcoms </label>
+          </div>
+
+          <div class="form-group">
+            <input name="group100" type="radio" id="radio102">
+            <label for="radio102"> News </label>
+          </div>
+
+          <div class="form-group">
+            <input name="group100" type="radio" id="radio102">
+            <label for="radio102"> Reality TV </label>
+          </div>
+          <!--Radio group-->
         </div>
       </div>
-      <div class="col-sm">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" value="">
-          Being outdoors
-        </label>
+      <div class="text-center">
+        <button class="btn btn-success w-25 p-2"> Next </button>
       </div>
     </div>
-    <div class="col-sm">
-    <div class="form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" value="">
-        Fashion and design
-      </label>
-    </div>
-  </div>
+      <div class="text-center">
+          <button class="btn btn-primary w-50" style="margin:15px;"> Submit </button>
       </div>
+      </div>
+      <div class="tab-pane fade" id="mood" role="tabpanel" aria-labelledby="profile-tab">
+        <h2 class="text-center p-3"> Mood Analyzer </h2>
+        <p class="text-center text-secondary"> An addition to use to analyze your mood and behavior at the end of the semester </p>
+        <div class="jumbotron" style="margin:15px;">
+          <div class="text-center">
+            <h5> Please enter a description of how you feel as the semester is coming to an end </h5>
+            <input id="moodInput" type="text" class="form-control w-75 mx-auto" style="margin:15px;" placeholder="I'm hungry...">
+            <button id="moodButton" class="btn btn-primary w-50"> Enter </button>
+          </div>
+          <ul id="returnBox" class="list-group" style="margin:15px;">
+          </ul>
+      </div>
+      </div>
+      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
     </div>
-  </div>
-  <div class="text-center">
-    <button class="btn btn-success w-25 p-2"> Next </button>
-  </div>
-</div>
 
-<!-- Question 4 -->
-<div class="jumbotron" style="margin:15px;">
-  <div class="card w-75 p-3 mx-auto" style="margin:15px;">
-    <div class="card-body">
-      <h4 class="card-title">Question 1</h4>
-      <h5 class="card-text">What makes you excited and curious</h5>
-      <div class="row">
-        <div class="col-sm">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="">
-            Working with children
-          </label>
-        </div>
-      </div>
-      <div class="col-sm">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" value="">
-          Being outdoors
-        </label>
-      </div>
-    </div>
-    <div class="col-sm">
-    <div class="form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" value="">
-        Fashion and design
-      </label>
-    </div>
-  </div>
-      </div>
-    </div>
-  </div>
-  <div class="text-center">
-    <button class="btn btn-success w-25 p-2"> Next </button>
-  </div>
-</div>
 
-<!-- Question 5 -->
-<div class="jumbotron" style="margin:15px;">
-  <div class="card w-75 p-3 mx-auto" style="margin:15px;">
-    <div class="card-body">
-      <h4 class="card-title">Question 1</h4>
-      <h5 class="card-text">What makes you excited and curious</h5>
-      <div class="row">
-        <div class="col-sm">
-        <div class="form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="">
-            Working with children
-          </label>
-        </div>
-      </div>
-      <div class="col-sm">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" type="checkbox" value="">
-          Being outdoors
-        </label>
-      </div>
-    </div>
-    <div class="col-sm">
-    <div class="form-check">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" value="">
-        Fashion and design
-      </label>
-    </div>
-  </div>
-      </div>
-    </div>
-  </div>
-  <div class="text-center">
-    <button class="btn btn-success w-25 p-2"> Next </button>
-  </div>
-</div>
 
 
 
@@ -292,5 +382,6 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
