@@ -28,6 +28,9 @@
     <!-- Bootstrap CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
     $(document).ready(function(){
       $('.btn').click(function() {
@@ -45,7 +48,7 @@
     });
   </script>
   </head>
-  <body>
+  <body onload="hideStuff()">
     <div class="text-center">
     <ul class="nav nav-tabs p-3 mx-auto" id="myTab" role="tablist">
       <li class="nav-item">
@@ -160,58 +163,22 @@
         <div class="card w-75 p-3 mx-auto" style="margin:15px;">
           <div class="card-body">
             <h4 class="card-title"> People See You As</h4>
-            <div class="row">
-              <div class="col-sm">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" value="">
-                  A risk taker
-                </label>
-              </div>
+            <!--Radio group-->
+            <div class="form-group ">
+                <input name="question2" type="radio" id="q2_radio1" value="A Problem Solver">
+                <label for="q2_radio1">A Problem Solver</label>
             </div>
-            <div class="col-sm">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" value="">
-                A listener
-              </label>
+
+            <div class="form-group">
+                <input name="question2" type="radio" id="q2_radio2" value="Lazy" checked>
+                <label for="q2_radio2">Lazy</label>
             </div>
-          </div>
-          <div class="col-sm">
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="radio" value="">
-              An innovator
-            </label>
-          </div>
-        </div>
+
+            <div class="form-group">
+                <input name="question2" type="radio" id="q2_radio3" value="Dependable">
+                <label for="q2_radio3"> Dependable </label>
             </div>
-            <div class="row">
-              <div class="col-sm">
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" value="">
-                  A leader
-                </label>
-              </div>
-            </div>
-            <div class="col-sm">
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="radio" value="">
-                A nerd
-              </label>
-            </div>
-          </div>
-          <div class="col-sm">
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="radio" value="">
-              reserved; to yourself
-            </label>
-          </div>
-        </div>
-            </div>
+            <!--Radio group-->
           </div>
         </div>
         <div class="text-center">
@@ -229,7 +196,7 @@
             <div class="col-sm">
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" type="checkbox" value="Math">
                 Math
               </label>
             </div>
@@ -237,7 +204,7 @@
           <div class="col-sm">
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value="">
+              <input class="form-check-input" type="checkbox" value="Biology">
               Biology
             </label>
           </div>
@@ -245,7 +212,7 @@
         <div class="col-sm">
         <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="">
+            <input class="form-check-input" type="checkbox" value="Chemistry">
             Chemistry
           </label>
         </div>
@@ -255,7 +222,7 @@
             <div class="col-sm">
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" type="checkbox" value="Physics">
                 Physics
               </label>
             </div>
@@ -263,7 +230,7 @@
           <div class="col-sm">
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input" type="checkbox" value="">
+              <input class="form-check-input" type="checkbox" value="History">
               History
             </label>
           </div>
@@ -271,7 +238,7 @@
         <div class="col-sm">
         <div class="form-check">
           <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="">
+            <input class="form-check-input" type="checkbox" value="Art">
             Art
           </label>
         </div>
@@ -291,23 +258,23 @@
           <h4 class="card-title">What is your idea of an accomplishment</h4>
             <!--Radio group-->
             <div class="form-group ">
-              <input name="group100" type="radio" id="radio100">
-              <label for="radio100">Making money</label>
+              <input name="question4" type="radio" id="choice6radio" value="making money">
+              <label for="choice6radio">Making money</label>
             </div>
 
             <div class="form-group">
-              <input name="group100" type="radio" id="radio101" checked>
-              <label for="radio101">Solving complex problems</label>
+              <input name="question4" type="radio" id="choice7radio" value="solving complex problems">
+              <label for="choice7radio">Solving complex problems</label>
             </div>
 
             <div class="form-group">
-              <input name="group100" type="radio" id="radio102">
-              <label for="radio102"> Helping others</label>
+              <input name="question4" type="radio" id="choice8radio" value="helping others">
+              <label for="choice8radio"> Helping others</label>
             </div>
 
             <div class="form-group">
-              <input name="group100" type="radio" id="radio102">
-              <label for="radio102"> Creating something new</label>
+              <input name="question4" type="radio" id="choice9radio" value="creating something new">
+              <label for="choice9radio"> Creating something new</label>
             </div>
             <!--Radio group-->
         </div>
@@ -324,28 +291,28 @@
           <h4 class="card-title">What types of TV Shows do you enjoy</h4>
           <!--Radio group-->
           <div class="form-group ">
-            <input name="group100" type="radio" id="radio100">
-            <label for="radio100">Documentaries/ Docudramas</label>
+            <input name="question5" type="radio" id="choice1radio" value="documentaries">
+            <label for="choice1radio">Documentaries/ Docudramas</label>
           </div>
 
           <div class="form-group">
-            <input name="group100" type="radio" id="radio101" checked>
-            <label for="radio101">Soap Operas</label>
+            <input name="question5" type="radio" id="choice2radio" value="soap operas">
+            <label for="choice2radio">Soap Operas</label>
           </div>
 
           <div class="form-group">
-            <input name="group100" type="radio" id="radio102">
-            <label for="radio102"> Sitcoms </label>
+            <input name="question5" type="radio" id="choice3radio" value="sitcoms">
+            <label for="choice3radio"> Sitcoms </label>
           </div>
 
           <div class="form-group">
-            <input name="group100" type="radio" id="radio102">
-            <label for="radio102"> News </label>
+            <input name="question5" type="radio" id="choice4radio" value="news">
+            <label for="choice4radio"> News </label>
           </div>
 
           <div class="form-group">
-            <input name="group100" type="radio" id="radio102">
-            <label for="radio102"> Reality TV </label>
+            <input name="question5" type="radio" id="choice5radio" value="reality tv">
+            <label for="choice5radio"> Reality TV </label>
           </div>
           <!--Radio group-->
         </div>
@@ -355,7 +322,10 @@
       </div>
     </div>
       <div class="text-center">
-          <button class="btn btn-primary w-50" style="margin:15px;"> Submit </button>
+          <button id="decisionMaker" class="btn btn-primary w-50" style="margin:15px;"> Submit </button>
+          <button id="results" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Launch demo modal
+          </button>
       </div>
       </div>
       <div class="tab-pane fade" id="mood" role="tabpanel" aria-labelledby="profile-tab">
@@ -370,10 +340,33 @@
           <ul id="returnBox" class="list-group" style="margin:15px;">
           </ul>
       </div>
+      <div id="disclaimer">
+        <p class="lead w-50 p-3"> Disclaimer: We do not guarantee that this is unbreakable or in any way a representation of how you actually feel </h5>
+      </div>
       </div>
       <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
     </div>
 
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Results</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="ModalBody" class="modal-body">
+            <div id="progressbar"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -382,6 +375,7 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/js/mdb.min.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

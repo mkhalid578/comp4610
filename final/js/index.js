@@ -21,31 +21,44 @@ $(document).ready(function(){
                 document.getElementById('returnBox').innerHTML = feelings;
         }});
     });
+
+
+    $("#decisionMaker").click(function() {
+      /*var cs = 0;
+      var art = 0;
+      var science = 0;
+      var engineer = 0;
+      var history = 0;
+      var artMajors = [
+          "advertising",
+          "Law",
+          "Political Science",
+          "Public Administration",
+          "Publishing",
+          "Teaching"
+      ];
+      var engineerMajors = [
+        "Electrical Engineering",
+        "Plastics Engineering",
+        "Chemical Engineering",
+        "Civil Engineering",
+        "Mechanical Engineering"
+      ]; */
+
+      //TODO the logic for displaying
+
+        $("#progressbar").progressbar({
+          value: 88
+        });
+
+      // Hide and show the corresponding buttons
+      $("#decisionMaker").fadeOut();
+      $("#results").fadeIn();
+
+    });
+
 });
 
-$("#decisionMaker").click(function() {
-  var cs = 0;
-  var art = 0;
-  var science = 0;
-  var engineer = 0;
-  var history = 0;
-  var artMajors = [
-      "advertising",
-      "Law",
-      "Political Science",
-      "Public Administration",
-      "Publishing",
-      "Teaching"
-  ];
-  var engineerMajors = [
-    "Electrical Engineering",
-    "Plastics Engineering",
-    "Chemical Engineering",
-    "Civil Engineering",
-    "Mechanical Engineering"
-  ];
-
-  
-
-
-});
+function hideStuff() {
+  $("#results").hide();
+}
