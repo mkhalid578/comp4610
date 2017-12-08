@@ -7,7 +7,7 @@
 $(document).ready(function(){
     $("#moodButton").click(function(){
         var userInput = $('#moodInput').val();
-        userInput = encodeURIComponent(userInput.trim());
+        userInput = encodeURIComponent(userInput.trim().replace(/\./g,' '));
         $.ajax({url: "https://watson-api-explorer.mybluemix.net/tone-analyzer/api/v3/tone?text=%22" + userInput + "%22&version=2017-09-21&sentences=true&tones=language",
                success: function(result){
                  var feelings = "<h4>You feel:</h4> "
@@ -24,11 +24,13 @@ $(document).ready(function(){
 
 
     $("#decisionMaker").click(function() {
-      /*var cs = 0;
+      var cs = 50;
       var art = 0;
       var science = 0;
       var engineer = 0;
       var history = 0;
+
+      /*
       var artMajors = [
           "advertising",
           "Law",
@@ -47,12 +49,31 @@ $(document).ready(function(){
 
       //TODO the logic for displaying
 
-        $("#progressbar").progressbar({
-          value: 88
-        });
+      $("#cs").progressbar({
+        value: cs
+      });
 
-      // Hide and show the corresponding buttons
-      $("#decisionMaker").fadeOut();
+      $("#humanities").progressbar({
+        value: 40
+      });
+
+      $("#engineering").progressbar({
+        value: 46
+      });
+
+      $("#business").progressbar({
+        value: 78
+      });
+
+      $("#IT").progressbar({
+        value: 91
+      });
+
+      $("#idealMajor").html("<h4> Ideal Major is IT </h4>");
+
+
+      // Hide and show the correponding buttons
+      $("#decisionMaker").hide();
       $("#results").fadeIn();
 
     });

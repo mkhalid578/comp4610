@@ -29,8 +29,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Progress Bar -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script>
     $(document).ready(function(){
       $('.btn').click(function() {
@@ -50,14 +54,14 @@
   </head>
   <body onload="hideStuff()">
     <div class="text-center">
-    <ul class="nav nav-tabs p-3 mx-auto" id="myTab" role="tablist">
-      <li class="nav-item">
+    <ul class="nav nav-tabs mx-auto p-3" id="myTab" role="tablist">
+      <li class="nav-item mx-auto">
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"> Major Decider</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item mx-auto">
         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#mood" role="tab" aria-controls="profile" aria-selected="false"> Mid-Semester Mood Analyser</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item mx-auto">
         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
       </li>
     </ul>
@@ -68,7 +72,7 @@
         <!-- Question 1 -->
 
         <div class="jumbotron" style="margin:15px;">
-          <h1 class="text-center"> Major Decider </h1>
+          <h1 class="text-center"> Major Decider <i class="fa fa-graduation-cap" aria-hidden="true"></i>  </h1>
           <div class="card w-75 p-3 mx-auto" style="margin:15px;">
             <div class="card-body">
               <h4 class="card-title">What makes you excited and curious</h4>
@@ -324,7 +328,7 @@
       <div class="text-center">
           <button id="decisionMaker" class="btn btn-primary w-50" style="margin:15px;"> Submit </button>
           <button id="results" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Launch demo modal
+            View Results
           </button>
       </div>
       </div>
@@ -358,7 +362,18 @@
             </button>
           </div>
           <div id="ModalBody" class="modal-body">
-            <div id="progressbar"></div>
+            <h5> Computer Science </h5>
+            <div style="margin:5px;" id="cs"></div>
+            <h5> Engineering </h5>
+            <div style="margin:5px;" id="engineering"></div>
+            <h5> Humanities </h5>
+            <div style="margin:5px;" id="humanities"></div>
+            <h5> Business </h5>
+            <div style="margin:5px;" id="business"></div>
+            <h5> Information Technology </h5>
+            <div style="margin:5px;" id="IT"></div>
+            <div style="margin:5px;" id="idealMajor">
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
