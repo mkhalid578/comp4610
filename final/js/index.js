@@ -4,6 +4,14 @@
 
 */
 
+// Global counters
+
+var cs = 0;
+var art = 0;
+var science = 0;
+var engineer = 0;
+var history = 0;
+
 $(document).ready(function(){
     $("#moodButton").click(function(){
         var userInput = $('#moodInput').val();
@@ -24,11 +32,7 @@ $(document).ready(function(){
 
 
     $("#decisionMaker").click(function() {
-      var cs = 50;
-      var art = 0;
-      var science = 0;
-      var engineer = 0;
-      var history = 0;
+
 
       /*
       var artMajors = [
@@ -49,27 +53,33 @@ $(document).ready(function(){
 
       //TODO the logic for displaying
 
+
+      question1();
+      var selectedValue = $("input[name='question5']:checked").val();
+      question5(selectedValue);
+
+
       $("#cs").progressbar({
         value: cs
       });
 
       $("#humanities").progressbar({
-        value: 40
+        value: 80
       });
 
       $("#engineering").progressbar({
-        value: 46
+        value: cs
       });
 
       $("#business").progressbar({
-        value: 78
+        value: science
       });
 
       $("#IT").progressbar({
-        value: 91
+        value: cs
       });
 
-      $("#idealMajor").html("<h4> Ideal Major is IT </h4>");
+      $("#idealMajor").html("<h4> The select value is: " + selectedValue + "</h4>");
 
 
       // Hide and show the correponding buttons
@@ -82,4 +92,52 @@ $(document).ready(function(){
 
 function hideStuff() {
   $("#results").hide();
+}
+
+function question1() {
+  var checkedValues = $('input:checkbox:checked').map(function() {
+    return this.value;
+}).get();
+
+console.log(checkedValues);
+}
+
+
+function question5(value) {
+  switch (value) {
+    case "documentaries":
+      cs += 5;
+      science += 5;
+      engineer += 5;
+      break;
+
+    case "soap operas":
+      art += 5;
+      history += 5;
+      break;
+
+    case "sitcoms":
+      cs += 5;
+      science += 5;
+      engineer += 5;
+      art += 5;
+      history += 5;
+      break;
+
+    case "news":
+      cs += 5;
+      science += 5;
+      engineer += 5;
+      art += 5;
+      history += 5;
+      break;
+
+    case "reality tv":
+      art += 5;
+      history += 5;
+      break;
+
+    default:
+      break;
+  }
 }
