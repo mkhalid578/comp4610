@@ -20,7 +20,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Hello, world!</title>
+    <title>Major Decider | Final</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -35,22 +35,23 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- JQuery Validation Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+
     <script>
-    $(document).ready(function(){
-      $('.btn').click(function() {
-        var target;
-        $(".jumbotron").each(function(i, element) {
-          target = $(element).offset().top;
-          if (target - 10 > $(document).scrollTop()) {
-            return false; // break
-          }
-        });
-        $("html, body").animate({
-          scrollTop: target
-        }, 700);
-      });
-    });
-  </script>
+	// only for demo purposes
+	$.validator.setDefaults({
+		submitHandler: function() {
+			alert("submitted!");
+		}
+	});
+
+	$(document).ready(function() {
+		$("#question1_input").validate();
+	});
+	</script>
+
   </head>
   <body onload="hideStuff()">
     <div class="text-center">
@@ -66,6 +67,7 @@
 
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        
         <!-- Question 1 -->
 
         <div class="jumbotron stylish-color" style="margin:15px;">
@@ -76,8 +78,9 @@
               <div class="row p-3">
                 <div class="col-sm">
                 <div class="form-check">
+                  <form id="inputForm">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="">
+                    <input class="form-check-input" name="terms" type="checkbox" value="Working with Children">
                     Working with children
                   </label>
                 </div>
@@ -85,7 +88,7 @@
               <div class="col-sm">
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" value="">
+                  <input class="form-check-input" type="checkbox" value="Being outdoors">
                   Being outdoors
                 </label>
               </div>
@@ -93,7 +96,7 @@
             <div class="col-sm">
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" type="checkbox" value="Fashion and Design">
                 Fashion and design
               </label>
             </div>
@@ -103,7 +106,7 @@
                 <div class="col-sm">
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="">
+                    <input class="form-check-input" type="checkbox" value="Sports and Entertainment">
                     Sports and Entertainment
                   </label>
                 </div>
@@ -111,7 +114,7 @@
               <div class="col-sm">
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" value="">
+                  <input class="form-check-input" type="checkbox" value="Social Issues">
                   Social Issues
                 </label>
               </div>
@@ -119,7 +122,7 @@
             <div class="col-sm">
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" type="checkbox" value="Helping Others">
                 Helping Others
               </label>
             </div>
@@ -129,7 +132,7 @@
                 <div class="col-sm">
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" value="">
+                    <input class="form-check-input" type="checkbox" value="Technology">
                     Technology
                   </label>
                 </div>
@@ -137,7 +140,7 @@
               <div class="col-sm">
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" value="">
+                  <input class="form-check-input" type="checkbox" value="Solving Complex Problems">
                   Solving Complex Problems
                 </label>
               </div>
@@ -145,7 +148,7 @@
             <div class="col-sm">
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
+                <input class="form-check-input" type="checkbox" value="Art and Music">
                 Art and Music
               </label>
             </div>
@@ -166,18 +169,23 @@
             <h4 class="card-title"> People See You As</h4>
             <!--Radio group-->
             <div class="form-group ">
-                <input name="question2" type="radio" id="q2_radio1" value="A Problem Solver">
-                <label for="q2_radio1">A Problem Solver</label>
+                <input name="question2" type="radio" id="q2_radio1" value="A Risk Taker">
+                <label for="q2_radio1">A Risk Taker</label>
             </div>
 
             <div class="form-group">
-                <input name="question2" type="radio" id="q2_radio2" value="Lazy" checked>
-                <label for="q2_radio2">Lazy</label>
+                <input name="question2" type="radio" id="q2_radio2" value="Innovative" checked>
+                <label for="q2_radio2">An Innovator</label>
             </div>
 
             <div class="form-group">
-                <input name="question2" type="radio" id="q2_radio3" value="Dependable">
-                <label for="q2_radio3"> Dependable </label>
+                <input name="question2" type="radio" id="q2_radio3" value="Leader">
+                <label for="q2_radio3"> A Leader </label>
+            </div>
+
+            <div class="form-group">
+                <input name="question2" type="radio" id="q2_radio4" value="Listener">
+                <label for="q2_radio4"> A Listener </label>
             </div>
             <!--Radio group-->
           </div>
@@ -323,11 +331,13 @@
       </div>
     </div>
       <div class="text-center">
-          <button id="decisionMaker" class="btn btn-primary w-50" style="margin:15px;"> Submit </button>
+          <button id="decisionMaker" type="submit" class="btn btn-primary w-50" style="margin:15px;"> Submit </button>
           <button id="results" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             View Results
           </button>
+          <button id="refresh" class="btn btn-primary" style="margin:15px;"> <i class="fa fa-refresh" aria-hidden="true"></i> </button>
       </div>
+    </form>
       </div>
       <div class="tab-pane fade" id="mood" role="tabpanel" aria-labelledby="profile-tab">
         <h2 class="text-center p-3"> Mood Analyzer </h2>
@@ -359,22 +369,23 @@
             </button>
           </div>
           <div id="ModalBody" class="modal-body">
-            <h5> Computer Science </h5>
+            <h5> Science </h5>
             <div style="margin:5px;" id="cs"></div>
-            <h5> Engineering </h5>
+            <h5> Engineering/ Technology </h5>
             <div style="margin:5px;" id="engineering"></div>
-            <h5> Humanities </h5>
+            <h5> Liberal Arts </h5>
             <div style="margin:5px;" id="humanities"></div>
             <h5> Business </h5>
             <div style="margin:5px;" id="business"></div>
-            <h5> Information Technology </h5>
+            <h5> Visual Performance Arts </h5>
             <div style="margin:5px;" id="IT"></div>
             <div style="margin:5px;" id="idealMajor">
             </div>
+              <ul id="possibleMajors">
+              </ul>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -389,5 +400,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/js/mdb.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/validateInput.js"></script>
   </body>
 </html>
