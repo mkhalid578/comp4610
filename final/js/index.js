@@ -57,23 +57,38 @@ var fieldofStudies = {
     "Women/Gender Studies"
   ],
   'engineerTechnology':[
-    "Arts Management",
-    "Education",
-    "Emergency Management",
-    "English/Writing",
-    "Equine Science/Mgmt",
-    "Family & Child Science",
-    "History",
-    "Journalism",
-    "Language Studies",
-    "Non-Profit Management",
-    "Peace/Conflict Studies",
-    "Philosophy",
-    "Political Science",
-    "Social Science",
-    "Sports Turf/Golf Mgmt",
-    "Women/Gender Studies"
+    "Aerospace Engineering",
+    "Astronomy",
+    "Aviation/Aeronautics",
+    "Biomedical Engineering",
+    "Chemical Engineering",
+    "Civil Engineering",
+    "Computer Science",
+    "Electrical Engineering",
+    "Energy Science",
+    "Engineering",
+    "Imaging Science",
+    "Industrial Engineering",
+    "Industrial Technology",
+    "Materials Science",
+    "Mathematics",
+    "Mechanical Engineering"
+  ],
+  'Business': [
+    "Accounting - General",
+    "Business - General",
+    "Construction Management",
+    "Finance & Economics",
+    "Hospitality Management",
+    "Human Resources Mgmt",
+    "Information Systems (MIS)",
+    "Insurance & Risk Mgmt",
+    "National Parks Management",
+    "Public Health Administration",
+    "Sport Management",
+    "Supply Chain Mgmt (Logistics)"
   ]
+
 }
 
 
@@ -96,9 +111,19 @@ $(document).ready(function(){
 
 $(document).ready(function() {
   $("#refresh").click(function() {
-    location.reload();
+    $('html,body').animate({
+      scrollTop: $("#myTabContent").offset().top
+    }, 200);
+    for (var counter in major) {
+      major[counter] = 0;
+    }
+    $('input:checkbox').removeAttr('checked');
+    $('#refresh').hide();
+    $("#results").hide();
+    $("#decisionMaker").show();
   });
 });
+
 
 
 $(document).ready(function(){
@@ -125,16 +150,12 @@ $(document).ready(function(){
 
       //TODO the logic for displaying
 
-      if (!validateForm()) {
-        return;
-      }
 
       var question5selection = $("input[name='question5']:checked").val();
       var question2selection = $("input[name='question2']:checked").val();
       var question4selection = $("input[name='question4']:checked").val();
+
       question1();
-
-
       question2(question2selection);
       question3();
       question4(question4selection);
@@ -350,34 +371,13 @@ function question5(value) {
 
 function idealMajor() {
 
-largestKey = Object.keys(major).reduce(function(a, b){ return major[a] > major[b] ? a : b });
-$("#idealMajor").html("<h4> Possible Degree Plans: </h4>");
-var listItems = "";
+  largestKey = Object.keys(major).reduce(function(a, b){ return major[a] > major[b] ? a : b });
+  $("#idealMajor").html("<h4> Possible Degree Plans: </h4>");
+  var listItems = "";
 
-for (var fields in fieldofStudies[largestKey]) {
-  listItems += "<li class='text-success list-group-item'>" + fieldofStudies[largestKey][fields] + "</li>";
-}
+  for (var fields in fieldofStudies[largestKey]) {
+    listItems += "<li class='text-success list-group-item'>" + fieldofStudies[largestKey][fields] + "</li>";
+  }
 
-$("#possibleMajors").html(listItems);
-}
-
-function validateForm() {
-
-  $('form').validate({
-        rules: {
-            terms: {
-               required : true
-            }
-
-        },
-    messages:{
-        terms: {
-          required : "check the checbox"
-        }
-    }
-
-  });
-
-  return true;
-
+  $("#possibleMajors").html(listItems);
 }
