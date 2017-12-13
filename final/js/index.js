@@ -1,6 +1,32 @@
 /*
-  Muhammed Khalid
-  Huma Khokhar
+ Partners:
+ Muhammed Khalid, muhammed_khalid@student.uml.edu
+ Huma Sheikh, Huma_Khokhar@student.uml.edu
+ Computer Science Department, UMass Lowell
+ Comp.4610, GUI Programming I
+ File: /usr/cs/temp/f2014/mkhalid/public_html/461f2017/final/index.html
+ Created: 13-Dec-2017
+ Last updated by HS: 13-Dec-2017, 12:24
+ Sources:
+ https://www.w3schools.com/html/html_tables.asp
+ https://www.w3schools.com/css/css_howto.asp
+ https://www.w3schools.com/css/css_align.asp
+ https://www.w3schools.com/tags/att_input_placeholder.asp
+ https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+ https://www.w3schools.com/howto/howto_css_modals.asp
+ https://getbootstrap.com/docs/4.0/content/tables/
+ http://myvedham.blogspot.in/2013/09/jquery-select-by-name-and-id.html
+ https://stackoverflow.com/questions/171027/add-table-row-in-jquery
+ // Div scrolling
+ Sources: http://plnkr.co/edit/H0Rr0wTYYsTHZLuD3DPN?p=preview
+ // tab interface
+ https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp
+ // tab interface
+ https://getbootstrap.com/docs/4.0/components/navs/#javascript-behavior
+ // radio group
+ https://mdbootstrap.com/components/bootstrap-radio-button/
+ // JQuery
+ http://api.jquery.com/html/
 
 */
 
@@ -14,7 +40,7 @@ var major = {
   "Business": 0
 }
 
-// Fields of studies
+// Fields of studies for each major
 var fieldofStudies = {
   'medicalLifeSciences': [
     "Athletic Training",
@@ -148,9 +174,6 @@ $(document).ready(function(){
     $("#decisionMaker").click(function() {
 
 
-      //TODO the logic for displaying
-
-
       var question5selection = $("input[name='question5']:checked").val();
       var question2selection = $("input[name='question2']:checked").val();
       var question4selection = $("input[name='question4']:checked").val();
@@ -162,23 +185,28 @@ $(document).ready(function(){
       question5(question5selection);
 
       $("#cs").progressbar({
-        value: major['medicalLifeSciences']
+        value: major['medicalLifeSciences'],
+        create: function(event, ui) {$(this).find('.ui-widget-header').css({'background-color':'#4285F4'})}
       });
 
       $("#humanities").progressbar({
-        value: major['liberalArts']
+        value: major['liberalArts'],
+        create: function(event, ui) {$(this).find('.ui-widget-header').css({'background-color':'#4285F4'})}
       });
 
       $("#engineering").progressbar({
-        value: major['engineerTechnology']
+        value: major['engineerTechnology'],
+        create: function(event, ui) {$(this).find('.ui-widget-header').css({'background-color':'#4285F4'})}
       });
 
       $("#business").progressbar({
-        value: major['Business']
+        value: major['Business'],
+        create: function(event, ui) {$(this).find('.ui-widget-header').css({'background-color':'#4285F4'})}
       });
 
       $("#IT").progressbar({
-        value: major['visualPerformanceArts']
+        value: major['visualPerformanceArts'],
+        create: function(event, ui) {$(this).find('.ui-widget-header').css({'background-color':'#4285F4'})}
       });
 
       idealMajor();

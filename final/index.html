@@ -1,19 +1,34 @@
 
 <!--
 
-  // Div scrolling
-  Sources: http://plnkr.co/edit/H0Rr0wTYYsTHZLuD3DPN?p=preview
-  // tab interface
-  https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp
-  // tab interface
-  https://getbootstrap.com/docs/4.0/components/navs/#javascript-behavior
-
-  // radio group
-
-  https://mdbootstrap.com/components/bootstrap-radio-button/
-
-  // JQuery
-  http://api.jquery.com/html/
+Partners:
+Muhammed Khalid, muhammed_khalid@student.uml.edu
+Huma Sheikh, Huma_Khokhar@student.uml.edu
+Computer Science Department, UMass Lowell
+Comp.4610, GUI Programming I
+File: /usr/cs/temp/f2014/mkhalid/public_html/461f2017/final/index.html
+Created: 13-Dec-2017
+Last updated by HS: 13-Dec-2017, 12:24
+Sources:
+https://www.w3schools.com/html/html_tables.asp
+https://www.w3schools.com/css/css_howto.asp
+https://www.w3schools.com/css/css_align.asp
+https://www.w3schools.com/tags/att_input_placeholder.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal
+https://www.w3schools.com/howto/howto_css_modals.asp
+https://getbootstrap.com/docs/4.0/content/tables/
+http://myvedham.blogspot.in/2013/09/jquery-select-by-name-and-id.html
+https://stackoverflow.com/questions/171027/add-table-row-in-jquery
+// Div scrolling
+Sources: http://plnkr.co/edit/H0Rr0wTYYsTHZLuD3DPN?p=preview
+// tab interface
+https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp
+// Bootstrap CSS (Tab Interface, Modals, and input groups)
+https://getbootstrap.com/docs/4.0/components/navs/#javascript-behavior
+// radio group
+https://mdbootstrap.com/components/bootstrap-radio-button/
+// JQuery
+http://api.jquery.com/html/
 
 -->
 
@@ -48,7 +63,7 @@
         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"> Major Decider</a>
       </li>
       <li class="nav-item mx-auto">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#mood" role="tab" aria-controls="profile" aria-selected="false"> Mid-Semester Mood Analyser</a>
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#mood" role="tab" aria-controls="profile" aria-selected="false"> End-of-Semester Mood Analyser</a>
       </li>
     </ul>
   </div>
@@ -313,9 +328,6 @@
           <!--Radio group-->
         </div>
       </div>
-      <div class="text-center">
-        <button class="btn btn-success w-25 p-2"> Next </button>
-      </div>
     </div>
       <div class="text-center">
           <button id="decisionMaker" type="submit" class="btn btn-primary w-50" style="margin:15px;"> Submit </button>
@@ -324,9 +336,11 @@
           </button>
           <button id="refresh" class="btn btn-primary" style="margin:15px;"> <i class="fa fa-refresh" aria-hidden="true"></i> </button>
       </div>
+
+        <p class="text-center p-3"> Disclaimer: We do not guarantee that this is unbreakable or the ideal major for you. Wish you the best with your search! </p>
       </div>
       <div class="tab-pane fade" id="mood" role="tabpanel" aria-labelledby="profile-tab">
-        <h2 class="text-center p-3"> Mood Analyzer </h2>
+        <h2 class="text-center p-3"> End-of-Semester Mood Analyzer </h2>
         <p class="text-center text-secondary"> An addition to use to analyze your mood and behavior at the end of the semester </p>
         <div class="jumbotron" style="margin:15px;">
           <div class="text-center">
@@ -356,15 +370,15 @@
           </div>
           <div id="ModalBody" class="modal-body">
             <h5> Science </h5>
-            <div style="margin:5px;" id="cs"></div>
+            <div style="margin:5px;" class="progressColor" id="cs"></div>
             <h5> Engineering/ Technology </h5>
-            <div style="margin:5px;" id="engineering"></div>
+            <div style="margin:5px;" class="progressColor" id="engineering"></div>
             <h5> Liberal Arts </h5>
-            <div style="margin:5px;" id="humanities"></div>
+            <div style="margin:5px;" class="progressColor" id="humanities"></div>
             <h5> Business </h5>
-            <div style="margin:5px;" id="business"></div>
+            <div style="margin:5px;" class="progressColor" id="business"></div>
             <h5> Visual Performance Arts </h5>
-            <div style="margin:5px;" id="IT"></div>
+            <div style="margin:5px;" class="progressColor" id="IT"></div>
             <div style="margin:5px;" id="idealMajor">
             </div>
               <ul id="possibleMajors">
